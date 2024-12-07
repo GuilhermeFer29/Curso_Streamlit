@@ -10,4 +10,8 @@ df = pd.read_csv('01 Spotify.csv')
 
 df.set_index("Track", inplace=True)
 
-st.bar_chart(df[df["Stream"] > 1000000000]["Stream"])
+artists = df['Artist'].value_counts().index
+option = st.selectbox('Artista',artists )
+
+df_filter = df[df['Artist'] == option ]
+st.bar_chart(df_filter["Stream"])
