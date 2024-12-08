@@ -31,3 +31,8 @@ df_filtered2 = df[df['Album'] == artist]
 artist_data = st.checkbox("Dados Artista")
 if artist_data:
     st.bar_chart(df_filtered2["Stream"])
+   
+   
+
+
+    
